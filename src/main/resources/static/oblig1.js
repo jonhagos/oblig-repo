@@ -11,6 +11,18 @@ function validateForm() {
             formHasError = true;
         }
 
+    document.getElementById("eNavnVal").innerHTML=" ";
+    let etterNavn = document.forms["myForm"]["eNavn"].value;
+    if (etterNavn == " "){
+        document.getElementById("eNavnVal").innerHTML = "vennligst skriv etter navn"
+        formHasError = true;
+    }
+    else if (!/^[a-z][a-z\s]*$/.test(etterNavn)){
+        document.getElementById("eNavnVal").innerHTML = " Skrive bare bokstaver"
+        formHasError = true;
+    }
+
+
     document.getElementById("telefonnrVal").innerHTML=" ";
     let telefonnummer = document.forms["myForm"]["telefonnr"].value;
     if (telefonnummer == "") {
