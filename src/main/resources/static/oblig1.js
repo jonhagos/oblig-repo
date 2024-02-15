@@ -111,7 +111,7 @@ function validateForm() {
 
 function slett() {
     let list = document.getElementById('alleBilletter');
-    list.innerHTML = " ";
+    list.innerHTML = " ";  // deleting entire data in the array
 
 
 
