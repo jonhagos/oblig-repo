@@ -11,17 +11,17 @@
 </head>
 <body>
 
-<form name="myForm"  onsubmit="return validateForm()">
+<form name="myForm" id="myForm">
    <span>Velg film: </span> <select name="movies" id="movies" >
         <option value="" disabled selected hidden>--Please choose an option--</option>
 
     <option>Lady Bird</option>
     <option>Sweet November</option>
     <option>Pain and Glory</option>
-        </select>
+        </select> &nbsp;<span id="velgFilmVal"></span>
     </br>
     </br>
-    Antall: <input type="text" name="antall">
+    Antall: <input type="text" name="antall"> &nbsp;<span id="antallVal"></span>
     </br>
     </br>
     Fornavn: <input type="text" name="fNavn"> &nbsp; <span id="fNavnVal"></span>
@@ -30,13 +30,24 @@
     Etternavn: <input type="text" name="eNavn"> &nbsp; <span id="eNavnVal"></span>
     </br>
     </br>
-    Telefonnummer: <input type="tel" maxlength="8" name="telefonnr"> &nbsp;<span id="telefonnrVal"></span>
+    Telefonnummer: <input type="tel" maxlength="8" name="telefonnr"> &nbsp;&nbsp;<span id="telefonnrVal"></span>
     </br>
     </br>
-    E-post: <input type="text" name="epost">
+    E-post: <input type="text" name="epost"> &nbsp;<span id="epostVal"></span>
     </br>
     </br>
-    <input type="submit" value="Kjøp billett">
+
+    <input type="button" onclick="validateForm()" value="KjøpBillett">
 </form>
+</br>
+</br>
+
+<h3>Alle Billetter</h3>
+</br></br>
+<div id="alleBilletter"></div>
+
+<br/><br/>
+<button onclick="slett()">Slette alle billettene</button>
+
 </body>
 </html>

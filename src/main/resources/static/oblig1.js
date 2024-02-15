@@ -1,5 +1,26 @@
+
+const personData=[];
 function validateForm() {
     let formHasError = false;
+    document.getElementById("velgFilmVal").innerHTML = " ";
+    let velgFilm = document.forms["myForm"]["movies"].value;
+    if (velgFilm == "") {
+        document.getElementById("velgFilmVal").innerHTML = "venligst velg en film";
+        formHasError = true;
+    }
+
+    document.getElementById("antallVal").innerHTML = " ";
+    let antallFilm = document.forms["myForm"]["antall"].value;
+    if (antallFilm == "") {
+        document.getElementById("antallVal").innerHTML="This Field is required";
+        formHasError = true;
+
+
+    }
+    else if (isNaN(Number(antallFilm))) {
+        document.getElementById("antallVal").innerHTML = "Venligst skriv et nummer";
+        formHasError = true;
+    }
     document.getElementById("fNavnVal").innerHTML=" ";
     let forNavn = document.forms["myForm"]["fNavn"].value;
     if (forNavn == "") {
@@ -36,7 +57,63 @@ function validateForm() {
         formHasError = true;
 
     }
+    document.getElementById("epostVal").innerHTML=" ";
+    let epostaddress = document.forms["myForm"]["epost"].value;
+    if (epostaddress == "") {
+        document.getElementById("epostVal").innerHTML = "vennligst skriv inn epost";
+        formHasError = true;
+    }
+    let validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if (!epostaddress.match(validRegex)) {
+   // else if (!epostaddress.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)) {
+        document.getElementById("epostVal").innerHTML="enter  valid email";
+        formHasError = true;
+    }
+    if(!formHasError)
+    {
+        const person = {
+        film : velgFilm,
+        antall : antallFilm,
+        fornavn : forNavn,
+        etternavn : etterNavn,
+        telefonnr : telefonnummer,
+        epost : epostaddress
+    };
+        personData.push(person)
+        document.getElementById("myForm").reset();
+
+       /* let dataString = velgFilm + " " + antallFilm + " " + forNavn + " " + etterNavn +" "+ telefonnummer +" "+ epostaddress ;
+        let dataSpan = document.createElement('span')
+        dataSpan.innerHTML = dataString;*/
+
+        let ut = "<table><tr>" +
+            "<th>Film</th><th>Antall</th><th>Fornavn</th><th>Etternavn</th><th>Telefonnr</th><th>Epost</th>" +
+            "</tr>";
+        for (let p of personData) {
+            ut += "<tr>";
+            ut += "<td>" + p.film + "</td><td>" + p.antall + "</td><td>" + p.fornavn +" </td><td>" + p.etternavn +
+                "</td><td>" + p.telefonnr + "</td><td>" + p.epost + "</td>";
+            ut += "</tr>";
+
+        }
+
+        let list = document.getElementById('alleBilletter');
+        list.innerHTML = ut;
+
+    }
+
+
     return false;
+
+
+
+}
+
+function slett() {
+    let list = document.getElementById('alleBilletter');
+    list.innerHTML = " ";
+
+
 
 }
 
