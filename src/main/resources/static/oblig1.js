@@ -5,30 +5,30 @@ function validateForm() {
     document.getElementById("velgFilmVal").innerHTML = " ";
     let velgFilm = document.forms["myForm"]["movies"].value;
     if (velgFilm == "") {
-        document.getElementById("velgFilmVal").innerHTML = "venligst velg en film";
+        document.getElementById("velgFilmVal").innerHTML = "vennligst velg en film";
         formHasError = true;
     }
 
     document.getElementById("antallVal").innerHTML = " ";
     let antallFilm = document.forms["myForm"]["antall"].value;
     if (antallFilm == "") {
-        document.getElementById("antallVal").innerHTML="This Field is required";
+        document.getElementById("antallVal").innerHTML="vennligst fyll ut antall";
         formHasError = true;
 
 
     }
     else if (isNaN(Number(antallFilm))) {
-        document.getElementById("antallVal").innerHTML = "Venligst skriv et nummer";
+        document.getElementById("antallVal").innerHTML = "Vennligst skriv et nummer";
         formHasError = true;
     }
     document.getElementById("fNavnVal").innerHTML=" ";
     let forNavn = document.forms["myForm"]["fNavn"].value;
     if (forNavn == "") {
-        document.getElementById("fNavnVal").innerHTML = "This Field is required";
+        document.getElementById("fNavnVal").innerHTML = "Fyll ut feltet";
         formHasError = true;
     }
        else if (!/^[a-z][a-z\s]*$/.test(forNavn)){
-            document.getElementById("fNavnVal").innerHTML="enter only alpahabet";
+            document.getElementById("fNavnVal").innerHTML="Vennligst bare bokstaver";
             formHasError = true;
         }
 
