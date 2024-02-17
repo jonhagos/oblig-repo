@@ -39,7 +39,7 @@ function validateForm() {
     document.getElementById("eNavnVal").innerHTML=" ";
     let etterNavn = document.forms["myForm"]["eNavn"].value;
     if (etterNavn == " "){
-        document.getElementById("eNavnVal").innerHTML = "vennligst skriv etter navn"
+        document.getElementById("eNavnVal").innerHTML = "vennligst skriv etternavn"
         formHasError = true;
     }
     else if (!/^[a-z][a-z\s]*$/.test(etterNavn)){
@@ -51,13 +51,13 @@ function validateForm() {
     document.getElementById("telefonnrVal").innerHTML=" ";
     let telefonnummer = document.forms["myForm"]["telefonnr"].value;
     if (telefonnummer == "") {
-        document.getElementById("telefonnrVal").innerHTML="This Field is required";
+        document.getElementById("telefonnrVal").innerHTML="Vennligs skriv telefonnummer";
         formHasError = true;
 
 
     }
     else if (isNaN(Number(telefonnummer)) || telefonnummer.length !== 8) {
-        document.getElementById("telefonnrVal").innerHTML="enter a valid tel-number";
+        document.getElementById("telefonnrVal").innerHTML="Nummeret er ikke riktig";
         formHasError = true;
 
     }
@@ -70,7 +70,7 @@ function validateForm() {
     let validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     if (!epostaddress.match(validRegex)) {
    // else if (!epostaddress.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)) {
-        document.getElementById("epostVal").innerHTML="enter  valid email";
+        document.getElementById("epostVal").innerHTML="Vennligs skriv en riktig e-post"
         formHasError = true;
     }
     if(!formHasError)
