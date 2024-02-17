@@ -12,7 +12,7 @@
 <body>
 
 <form name="myForm" id="myForm">
-   <span>Velg film: </span> <select name="movies" id="movies" >
+    <b>Velg film: </b> <select name="movies" id="movies" >
         <option value="" disabled selected hidden>--Vennligst velg en film--</option>
 
     <option>Lady Bird</option>
@@ -21,23 +21,23 @@
         </select> &nbsp;<span id="velgFilmVal" style="color: red"></span>
     </br>
     </br>
-    Antall: <input type="text" name="antall"> &nbsp;<span id="antallVal" style="color: red"></span>
+    <b>Antall</b>: <input type="text" name="antall"> &nbsp;<span id="antallVal" style="color: red"></span>
     </br>
     </br>
-    Fornavn: <input type="text" name="fNavn"> &nbsp; <span id="fNavnVal" style="color: red"></span>
+    <b>Fornavn:</b> <input type="text" name="fNavn"> &nbsp; <span id="fNavnVal" style="color: red"></span>
     </br>
     </br>
-    Etternavn: <input type="text" name="eNavn"> &nbsp; <span id="eNavnVal" style="color: red"></span>
+    <b>Etternavn: </b> <input type="text" name="eNavn"> &nbsp; <span id="eNavnVal" style="color: red"></span>
     </br>
     </br>
-    Telefonnummer: <input type="tel" maxlength="8" name="telefonnr"> &nbsp;&nbsp;<span id="telefonnrVal" style="color: red"></span>
+    Telefonnummer:</b> <input type="tel" maxlength="8" name="telefonnr"> &nbsp;&nbsp;<span id="telefonnrVal" style="color: red"></span>
     </br>
     </br>
-    E-post: <input type="text" name="epost"> &nbsp;<span id="epostVal" style="color: red"></span>
+    E-post:</b> <input type="text" name="epost"> &nbsp;<span id="epostVal" style="color: red"></span>
     </br>
     </br>
 
-    <input type="button" onclick="validateForm()" value="KjøpBillett">
+    <input type="button" onclick="validateForm()" value="KjøpBillett" style="background-color: green" >
 </form>
 </br>
 </br>
@@ -47,7 +47,7 @@
 <div id="alleBilletter"></div>
 
 <br/><br/>
-<button onclick="slett()">Slette alle billettene</button>
+<button onclick="slett()"><b>Slette alle billettene</b></button>
 
 </body>
 </html>
