@@ -25,6 +25,10 @@ function validateForm() {
     let forNavn = document.forms["myForm"]["fNavn"].value;
     if (forNavn == "") {
         document.getElementById("fNavnVal").innerHTML = "Fyll ut feltet";
+
+
+
+
         formHasError = true;
     }
        else if (!/^[a-z][a-z\s]*$/.test(forNavn)){
